@@ -1,0 +1,9 @@
+BootStrap: docker
+From: r-base
+
+%post
+    apt-get -y install curl
+    echo 'install.packages(c("SPAtest", 'Rcpp', 'RcppArmadillo', 'RcppParallel', 'data.table', 'SPAtest', 'RcppEigen', 'Matrix'), repos="http://cran.us.r-project.org", dependencies=TRUE)' > /tmp/packages.R \
+&& Rscript /tmp/packages.R
+    wget https://github.com/weizhouUMICH/SAIGE/blob/master/SAIGE_0.24_R_x86_64-pc-linux-gnu.tar.gz -O SAIGE.tar.gz
+    R CMD INSTALL SAIGE.tar.gz
