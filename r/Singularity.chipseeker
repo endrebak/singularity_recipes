@@ -1,5 +1,8 @@
 BootStrap: docker
-From: r-base
+From: continuumio/anaconda3
 
 %post
-    echo 'source("https://bioconductor.org/biocLite.R"); biocLite("ChIPseeker")' > /tmp/packages.R && Rscript /tmp/packages.R
+    conda config --add channels r
+    conda config --add channels conda-forge
+    conda config --add channels bioconda
+    conda install -c bioconda bioconductor-chipseeker
