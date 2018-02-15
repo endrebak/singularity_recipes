@@ -1,8 +1,13 @@
 BootStrap: docker
-From: continuumio/anaconda3
+From: ubuntu:16.04
 
 %post
+    apt-get update
+    apt install -y wget bzip2
+    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+    bash miniconda.sh -b -p $HOME/miniconda
+    export PATH="$HOME/miniconda/bin:$PATH"
     conda config --add channels r
-    conda config --add channels conda-forge
     conda config --add channels bioconda
-    conda install -c bioconda bioconductor-chipseeker
+    conda config --add channels conda-forge
+    conda install bioconductor-chipseeker bioconductor-txdb.celegans.ucsc.ce11.refgene bioconductor-txdb.celegans.ucsc.ce6.ensgene bioconductor-txdb.dmelanogaster.ucsc.dm3.ensgene bioconductor-txdb.dmelanogaster.ucsc.dm6.ensgene bioconductor-txdb.drerio.ucsc.danrer10.refgene bioconductor-txdb.hsapiens.ucsc.hg18.knowngene bioconductor-txdb.hsapiens.ucsc.hg19.knowngene bioconductor-txdb.hsapiens.ucsc.hg19.lincrnastranscripts bioconductor-txdb.hsapiens.ucsc.hg38.knowngene bioconductor-txdb.mmusculus.ucsc.mm10.ensgene bioconductor-txdb.mmusculus.ucsc.mm10.knowngene bioconductor-txdb.mmusculus.ucsc.mm9.knowngene bioconductor-txdb.rnorvegicus.ucsc.rn4.ensgene bioconductor-txdb.rnorvegicus.ucsc.rn5.refgene bioconductor-txdb.rnorvegicus.ucsc.rn6.refgene bioconductor-txdb.scerevisiae.ucsc.saccer2.sgdgene bioconductor-txdb.scerevisiae.ucsc.saccer3.sgdgene
