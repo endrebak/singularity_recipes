@@ -1,0 +1,5 @@
+BootStrap: docker
+From: r-base
+
+%post
+    echo 'source("https://bioconductor.org/biocLite.R"); biocLite("ChIPseeker")' > /tmp/packages.R && Rscript /tmp/packages.R
