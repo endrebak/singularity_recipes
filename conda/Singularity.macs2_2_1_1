@@ -1,8 +1,5 @@
 BootStrap: docker
-From: continuumio/anaconda
+From: phusion/baseimage
 
 %post
-export PATH=/opt/conda/bin:${PATH}
-echo 'export PATH=/opt/conda/bin:${PATH}' >> $SINGULARITY_ENVIRONMENT
-conda install gcc
 pip install macs2
