@@ -1,5 +1,0 @@
-BootStrap: docker
-From: phusion/baseimage
-
-%post
-pip install macs2
