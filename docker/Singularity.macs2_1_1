@@ -5,4 +5,4 @@ From: ubuntu:16.04
 
 apt-get update && apt-get install -y gcc python2.7
 
-pip install macs2
+pip2.7 install macs2
