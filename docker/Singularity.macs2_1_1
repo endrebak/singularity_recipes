@@ -3,6 +3,6 @@ From: ubuntu:16.04
 
 %post
 
-apt-get update && apt-get install -y gcc
+apt-get update && apt-get install -y gcc python2.7
 
 pip install macs2
