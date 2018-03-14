@@ -5,4 +5,8 @@ From: continuumio/anaconda
 
 apt-get update && apt-get install -y gcc
 
-pip install macs2
+conda config --add channels r
+conda config --add channels bioconda
+conda config --add channels conda-forge
+
+conda install macs2
