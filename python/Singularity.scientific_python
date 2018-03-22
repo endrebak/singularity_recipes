@@ -6,7 +6,7 @@ From:tensorflow/tensorflow:1.0.1-gpu
 
 %post
   pip install dill h5py hyperopt keras pandas \
-    protobuf pymongo scikit-learn seaborn deeptools
+    protobuf pymongo scikit-learn seaborn
 
   # need to create mount point for home dir, scratch
   mkdir /uufs /scratch
