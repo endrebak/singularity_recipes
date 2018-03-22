@@ -12,4 +12,4 @@ pip install pandas scikit-learn seaborn natsort joblib
   # Sanity check that the container is operating
 
   # Test numpy
-  /usr/bin/python -c "import numpy as np;np.__config__.show()"
+  python -c "import numpy as np;np.__config__.show()"
