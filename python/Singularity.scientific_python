@@ -1,15 +1,18 @@
-Bootstrap: docker
-From: python:3.6
-
-%post
-
-pip install pandas scikit-learn seaborn natsort joblib
+BootStrap:docker
+From:tensorflow/tensorflow:1.0.1-gpu
 
 %runscript
   exec python "$@"
+
+%post
+  pip install dill h5py hyperopt keras pandas \
+    protobuf pymongo scikit-learn seaborn deeptools
+
+  # need to create mount point for home dir, scratch
+  mkdir /uufs /scratch
 
 %test
   # Sanity check that the container is operating
 
   # Test numpy
-  python -c "import numpy as np;np.__config__.show()"
+  /usr/bin/python -c "import numpy as np;np.__config__.show()"
